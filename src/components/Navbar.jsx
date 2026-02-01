@@ -37,7 +37,7 @@ export default function Navbar() {
                             <a href="#education" className="hover:text-white transition-colors px-3 py-2 rounded-md text-sm font-medium">Education</a>
                             <a href="#skills" className="hover:text-white transition-colors px-3 py-2 rounded-md text-sm font-medium">Skills</a>
                             <a href="#projects" className="hover:text-white transition-colors px-3 py-2 rounded-md text-sm font-medium">Projects</a>
-                            <a href="https://drive.google.com/file/d/1UJdyP6fbVZMQHiA4xSiE43NaxNLrw8pG/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors px-3 py-2 rounded-md text-sm font-medium">Resume</a>
+                            <a href="https://drive.google.com/file/d/18Q1lu1urKcpR0O2dwMDCq4eoHvNrujB1/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors px-3 py-2 rounded-md text-sm font-medium">Resume</a>
                             <a href="#contact" className="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all text-sm font-medium border border-white/10">Let's Talk</a>
                         </div>
                     </div>
@@ -60,7 +60,7 @@ export default function Navbar() {
                         <a href="#education" onClick={() => setIsMenuOpen(false)} className="text-2xl font-bold text-white hover:text-primary transition-colors block">Education</a>
                         <a href="#skills" onClick={() => setIsMenuOpen(false)} className="text-2xl font-bold text-white hover:text-primary transition-colors block">Skills</a>
                         <a href="#projects" onClick={() => setIsMenuOpen(false)} className="text-2xl font-bold text-white hover:text-primary transition-colors block">Projects</a>
-                        <a href="https://drive.google.com/file/d/1UJdyP6fbVZMQHiA4xSiE43NaxNLrw8pG/view?usp=drive_link" target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)} className="text-2xl font-bold text-white hover:text-primary transition-colors block">Resume</a>
+                        <a href="https://drive.google.com/file/d/18Q1lu1urKcpR0O2dwMDCq4eoHvNrujB1/view?usp=drive_link" target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)} className="text-2xl font-bold text-white hover:text-primary transition-colors block">Resume</a>
                         <a href="#contact" onClick={() => setIsMenuOpen(false)} className="text-2xl font-bold text-primary hover:text-white transition-colors block">Contact Me</a>
                     </div>
                 </div>

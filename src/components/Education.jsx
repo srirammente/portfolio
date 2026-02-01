@@ -41,7 +41,7 @@ export default function Education() {
                                     <span className="text-xs text-gray-400 bg-white/5 px-2 py-1 rounded">2020 - 2022</span>
                                 </div>
                                 <p className="text-gray-300 font-medium">Fiitjee Junior College, Hyderabad</p>
-                                <p className="text-gray-500 text-sm mt-1">Percentage: 92%</p>
+                                <p className="text-gray-500 text-sm mt-1">Percentage: 92.7%</p>
                             </div>
                         </RevealOnScroll>
 
@@ -53,7 +53,7 @@ export default function Education() {
                                     <span className="text-xs text-gray-400 bg-white/5 px-2 py-1 rounded">2020</span>
                                 </div>
                                 <p className="text-gray-300 font-medium">DAV Public School, Hyderabad</p>
-                                <p className="text-gray-500 text-sm mt-1">Percentage: 91%</p>
+                                <p className="text-gray-500 text-sm mt-1">Percentage: 91.6%</p>
                             </div>
                         </RevealOnScroll>
                     </div>

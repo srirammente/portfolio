@@ -4,64 +4,71 @@ import RevealOnScroll from "./ui/RevealOnScroll";
 export default function Projects() {
     const projects = [
         {
-            title: "Email Summarizer",
-            category: "Full Stack AI",
-            description: "Built a full-stack application to retrieve, summarize, and analyze emails in real-time using Python (FastAPI) and React.",
+            title: "MCP CineRAG",
+            category: "AI-Driven Backend",
+            description: "Full-stack AI movie discovery platform using React (frontend), Node.js orchestration, and a FastAPI-based RAG microservice.",
             highlights: [
-                "Integrated Gmail API with OAuth 2.0 for secure access",
-                "Employed Pegasus from Hugging Face for efficient local summarization",
-                "Event extraction module for key dates and times",
-                "Improved email processing efficiency by ~60% using fully local Pegasus summarizer"
+                "Two-stage retrieval pipeline (bi-encoder semantic search → cross-encoder reranking) to improve recommendation relevance",
+                "Offloaded reranking to async workers; cached results in Redis, reducing repeated-query latency",
+                "LangGraph-based agent workflows for multi-step reasoning (search → reviews → sentiment → ranking)",
+                "Evaluated retrieval with Recall@K and MRR; profiled RAG latency across retrieval, reranking, and generation",
+                "MCP-compatible tools with OpenAPI-documented endpoints for safe LLM-to-backend orchestration"
             ],
-            tech: ["Python", "FastAPI", "React", "Material UI", "Pegasus", "Firebase"],
-            color: "from-blue-500/20 to-purple-500/20",
-            github: "https://github.com/srirammente/email-summarizer",
-            live: null
-        },
-        {
-            title: "MCP LLM Streaming Platform",
-            category: "GenAI Web App",
-            description: "Developed a Movie Streaming Platform integrating Node.js backend with Model Context Protocol (MCP), enabling Claude Desktop to suggest personalized movie recommendations.",
-            highlights: [
-                "Reduced user search time by ~40% using contextual prompt-driven movie retrieval",
-                "Built frontend using React and Vite with movie display, search, and detailed views",
-                "Exposed REST API endpoints and MCP tools for Claude",
-                "Engineered backend with Node.js, Express, and SQLite"
-            ],
-            tech: ["Node.js", "Express", "SQLite", "React", "Vite", "MCP", "TMDB API"],
+            tech: ["React", "Node.js", "FastAPI", "LangGraph", "Redis", "RAG", "MCP"],
             color: "from-purple-500/20 to-pink-500/20",
             github: "https://github.com/srirammente/MCP-LLM-Streaming-Platform",
             live: null
         },
         {
-            title: "Email Agent",
-            category: "Full Stack AI",
-            description: "Email agent for inbox management and direct draft redirect. Deployed with Netlify frontend and Render backend, featuring prompt brain for customizable AI behavior.",
-            highlights: [
-                "Deployed on Netlify (frontend) and Render (backend)",
-                "AI-powered chat agent for email interaction",
-                "Prompt brain for customizable AI responses",
-                "Direct draft creation and management"
-            ],
-            tech: ["React", "FastAPI", "Netlify", "Render", "MongoDB", "Gemini API"],
-            color: "from-green-500/20 to-blue-500/20",
-            github: "https://github.com/srirammente/email-agent",
-            live: "https://email-agent-ovqj.netlify.app/"
-        },
-        {
             title: "Gen Z Typing Assistant",
             category: "ML / NLP",
-            description: "Fine-tuned a distilled Causal Language Model (DistilGPT2) using Low-Rank Adaptation (LoRA) to create a low-latency slang prediction engine.",
+            description: "AI backend combining PEFT (LoRA) fine-tuned language models with RAG to balance tone adaptation and factual grounding.",
             highlights: [
-                "Achieved perplexity = 2.17, ~88% reduction vs GPT-2",
-                "Improved predictive accuracy to 80.1%, surpassing GPT-2 (63.8%)",
-                "Curated custom 15,000+ phrase Gen Z corpus from Reddit/X",
-                "Built real-time interactive demo using Streamlit"
+                "RAPTOR-inspired hierarchical retrieval for multi-level slang understanding (term, theme, tone)",
+                "Multi-stage retrieval with sentence-window expansion and cross-encoder reranking",
+                "LangGraph agent workflows to validate responses, retry uncertain generations, and self-correct",
+                "FastAPI inference backend with async requests, SSE streaming, and concurrency-safe execution",
+                "Confidence scoring and output validation to reduce incorrect slang interpretations",
+                "ETL pipeline to embed, cluster, and index slang datasets into a vector database"
             ],
-            tech: ["Python", "PyTorch", "Hugging Face", "PEFT/LoRA", "Streamlit"],
+            tech: ["Python", "PEFT/LoRA", "FastAPI", "LangGraph", "RAG", "Vector DB"],
             color: "from-yellow-500/20 to-orange-500/20",
             github: null,
             live: null
+        },
+        {
+            title: "Summarized Email Notifier",
+            category: "Full Stack AI",
+            description: "Multi-user email intelligence backend using FastAPI with Google OAuth 2.0 (Web Auth Flow) and JWT-based session authentication.",
+            highlights: [
+                "Event-driven pipeline: Gmail push notifications, Redis queues, background workers for async summarization and classification",
+                "LLM-based summarization and classification with Pydantic schemas for meetings, deadlines, action items",
+                "Semantic caching and deduplication, reducing redundant AI calls by ~35–40% and improving latency",
+                "Retry logic, timeouts, and dead-letter queues for reliability under transient failures",
+                "Real-time updates via WebSockets for instant delivery of summarized emails",
+                "~1.5s average and ~2.1s p95 processing latency under load; Dockerized backend with CI for testing and deployment"
+            ],
+            tech: ["FastAPI", "Google OAuth 2.0", "JWT", "Redis", "WebSockets", "Docker", "Gmail API"],
+            color: "from-blue-500/20 to-purple-500/20",
+            github: "https://github.com/srirammente/email-summarizer",
+            live: null
+        },
+        {
+            title: "Email Agent",
+            category: "Full Stack AI",
+            description: "Prompt-driven email summarizer with a React (Vite) frontend and FastAPI backend. Monorepo configured for frontend deployment on Netlify and backend on Render.",
+            highlights: [
+                "Full-stack monorepo: React (Vite) frontend and FastAPI backend with Netlify + Render deployment",
+                "Inbox fetch, mock inbox loading, and email detail view with POST /emails/{id}/process for summarization",
+                "Agent chat (POST /agent/chat) and Prompt Brain (GET/POST /prompts) for customizable LLM behavior",
+                "Configurable prompts via env (SUMMARY_PROMPT, CATEGORY_PROMPT, ACTION_ITEMS_PROMPT) and runtime API",
+                "Draft management via /drafts endpoints; CORS and FRONTEND_ORIGIN for secure cross-origin requests",
+                "Gemini API integration for summarization, categorization, and action-item extraction; SPA redirects on Netlify"
+            ],
+            tech: ["React", "Vite", "FastAPI", "Gemini API", "Netlify", "Render"],
+            color: "from-green-500/20 to-blue-500/20",
+            github: "https://github.com/srirammente/email-agent",
+            live: "https://email-agent-ovqj.netlify.app/"
         },
     ];
 
